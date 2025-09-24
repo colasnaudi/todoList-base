@@ -28,12 +28,32 @@ export function useDialog() {
 
     // Fonction pour supprimer une tâche
 
-    
+    function deleteItem(id) {
+        const updatedList = listItem.filter((item) => item.id !== id);
+        setListItem(updatedList);
+        setNumberOfTasks(updatedList.filter(item => !item.isDone).length);
+    }
+
     // Fonction pour changer l'état d'une tâche
+
+    function toggleItemState(id) {
+        const updatedList = listItem.map((item) => {
+            if (item.id === id) {
+                item.isDone = !item.isDone;
+            }
+            return item;
+        });
+        setListItem(updatedList);
+        setNumberOfTasks(updatedList.filter(item => !item.isDone).length);
+        setNumberOfDoneTasks(updatedList.filter(item => item.isDone).length);
+    }
+
     return {
         listItem,
         addItem,
         numberOfTasks,
-        numberOfDoneTasks
+        numberOfDoneTasks,
+        deleteItem,
+        toggleItemState
     };
 };
