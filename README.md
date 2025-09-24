@@ -8,11 +8,11 @@ Ce design pattern est présent et nous l’avons partiellement implémenté car 
 
 ## Singleton
 
-Ce design Pattern est présent dans notre solution. En effet, lorsque que nous appelons useDialog, c’est la même instance qui est appelé, peut importe où nous l’appelons dans notre projet
+Ce design Pattern est présent dans notre solution. En effet, lorsque que nous appelons useDialog, c’est la même instance qui est appelé, peut importe où nous l’appelons dans notre projet. Néanmoins, ce n’est pas un singleton pur car nous pouvons créer plusieurs instance de useDialog si nous le souhaitons. Néanmoins, si nous voulons avoir plusieurs todo list dans notre application, alors le singleton ne serait plus approprié.
 
 ## Abstract Factory
 
-Ce pattern est compatible dans notre solution, en effet, nous pouvons imaginer avoir plusieurs implémentation du useDialog en fonction des listes que nous avons. Si dans l’avenir nous avions plusieurs todo list avec des tâches avec des structures différentes, ce design pattern peut être compatible. 
+Ce pattern est compatible dans notre solution, en effet, nous pouvons imaginer avoir plusieurs implémentation du useDialog en fonction des listes que nous avons. Si dans l’avenir nous avions plusieurs todo list avec des tâches avec des structures différentes, ce design pattern peut être compatible, ou bien si nous voulons avoir plusieurs implémentation de notre todo list, par exemple une todo list pour les tâches personnelles et une autre pour les tâches professionnelles.
 
 ## Builder
 
@@ -22,7 +22,11 @@ Nous pensons que ce pattern n’est pas compatible avec notre solution. En effet
 
 ## Command
 
+Nous pensons que ce deign pattern peut être compatible avec notre projet. En effet, si à l'avenir nous avons plusieurs boutons ou bien actions qui peut éffectuer les mêmes actions, alors nous pourrions encapsuler ces actions dans des commandes. Par exemple, si nous avons un bouton pour ajouter une tâche et un autre pour ajouter une tâche rapide, alors nous pourrions encapsuler ces actions dans des commandes.
+
 ## Observer
+
+Ce design pattern est compatible avec notre projet. En effet, nous avons un état global qui est le useDialog et plusieurs composants qui écoutent cet état global. Par exemple, lorsque nous ajoutons une tâche, le composant qui affiche la liste des tâches est notifié et se met à jour automatiquement. Nous pouvons aussi imaginer un système de notification qui prévient l’utilisateur lorsqu’une tâche est ajoutée, supprimée ou modifiée et qui mettre à jour l’interface utilisateur en conséquence sur plusieurs composants.
 
 ## State
 
