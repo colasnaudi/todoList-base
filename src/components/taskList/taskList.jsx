@@ -1,7 +1,7 @@
 // Ce composant est utilisé pour afficher la liste des tâches.
 import {TaskItem} from "../taskItem/taskItem";
 import styles from "./taskList.module.css";
-import {use, useEffect, useState} from "react";
+import { useEffect, useState} from "react";
 
 export const TaskList = ({ nbTasks, listItem }) => {
     const [len, setLen] = useState(nbTasks);

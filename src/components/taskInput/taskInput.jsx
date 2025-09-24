@@ -2,7 +2,7 @@
 import styles from "./taskInput.module.css";
 import {useState} from "react";
 
-export const TaskInput = (addItem) => {
+export const TaskInput = ({addItem}) => {
     const [name, setName] = useState("");
 
     const onChange = (e) => {
@@ -11,7 +11,7 @@ export const TaskInput = (addItem) => {
     const addItemForm = (e) => {
         e.preventDefault();
         if (name === "") return;
-        addItem.addItem(name);
+        addItem(name);
         setName("");
     }
     return (
