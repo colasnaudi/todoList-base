@@ -3,7 +3,6 @@ import styles from "./taskItem.module.css";
 import TrashIcon from "../icons/TrashIcon";
 import Validate from "../icons/ValidateIcon";
 import Undo from "../icons/UndoIcon";
-import { useDialog } from "../../dialog/useDialog";
 
 export const TaskItem = ({ task, removeItem, changeItem }) => {
 

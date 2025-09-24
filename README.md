@@ -4,7 +4,7 @@
 
 ## MVC
 
-Ce design pattern est présent et nous l’avons partiellement implémenté car nous avons notre hook UseDialog qui sert de model. Néanmoins ce n’est pas totalement un MCV car les Controller sont au sien des states qui sont des listeners ou bien dans les balises HTML qui ont des action controller et qui interagissent avec le model
+Ce design pattern est présent et nous l’avons partiellement implémenté car nous avons notre hook UseDialog qui sert de model. Néanmoins ce n’est pas totalement un MCV car les Controller sont au sein des states qui sont des listeners ou bien dans les balises HTML qui ont des action controller et qui interagissent avec le model
 
 ## Singleton
 
@@ -15,6 +15,8 @@ Ce design Pattern est présent dans notre solution. En effet, lorsque que nous a
 Ce pattern est compatible dans notre solution, en effet, nous pouvons imaginer avoir plusieurs implémentation du useDialog en fonction des listes que nous avons. Si dans l’avenir nous avions plusieurs todo list avec des tâches avec des structures différentes, ce design pattern peut être compatible, ou bien si nous voulons avoir plusieurs implémentation de notre todo list, par exemple une todo list pour les tâches personnelles et une autre pour les tâches professionnelles.
 
 ## Builder
+
+Ce design pattern n’est pas compatible avec notre solution. En effet, nous n’avons pas de construction d’objet complexe. Nous avons un objet simple qui est la tâche et nous n’avons pas besoin de le construire de manière progressive (pas besoin d'étapes).
 
 ## Decorator
 

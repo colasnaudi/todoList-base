@@ -40,12 +40,16 @@ export function useDialog() {
         const updatedList = listItem.map((item) => {
             if (item.id === id) {
                 item.isDone = !item.isDone;
+                if (item.isDone) {
+                    setNumberOfDoneTasks(numberOfDoneTasks + 1);
+                } else {
+                    setNumberOfDoneTasks(numberOfDoneTasks - 1);
+                }
             }
             return item;
         });
         setListItem(updatedList);
         setNumberOfTasks(updatedList.filter(item => !item.isDone).length);
-        setNumberOfDoneTasks(updatedList.filter(item => item.isDone).length);
     }
 
     return {
