@@ -3,7 +3,7 @@ import {TaskItem} from "../taskItem/taskItem";
 import styles from "./taskList.module.css";
 import { useEffect, useState} from "react";
 
-export const TaskList = ({ nbTasks, listItem }) => {
+export const TaskList = ({ listItem, nbTasks, removeItem, changeItem }) => {
     const [len, setLen] = useState(nbTasks);
     const [tache, setTaches] = useState("tâches");
 
@@ -27,7 +27,7 @@ export const TaskList = ({ nbTasks, listItem }) => {
             <h2 className={styles.title}>Il reste {len} {tache} à traiter</h2>
             <ul className={styles.container}>
                 {listItem.map((task) => (
-                    <TaskItem key={task.id} task={task} />
+                    <TaskItem key={task.id} task={task} removeItem={removeItem} changeItem={changeItem} />
                 ))}
             </ul>
         </div>

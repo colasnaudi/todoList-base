@@ -3,8 +3,9 @@ import styles from "./taskItem.module.css";
 import TrashIcon from "../icons/TrashIcon";
 import Validate from "../icons/ValidateIcon";
 import Undo from "../icons/UndoIcon";
+import { useDialog } from "../../dialog/useDialog";
 
-export const TaskItem = ({ id, task }) => {
+export const TaskItem = ({ task, removeItem, changeItem }) => {
 
   return (
     <li className={`${styles.container} ${task.isDone ? styles.success : styles.default}`}>
@@ -13,10 +14,12 @@ export const TaskItem = ({ id, task }) => {
         <div className={task.isDone ? styles.contentSuccess : styles.contentDefault}>{task.name}</div>
       </div>
       <div className={styles.actions}>
-        <button className="button-primary">
+        <button className="button-primary" onClick={() => changeItem(task.id)}>
           {task.isDone ? <Undo /> : <Validate />}
         </button>
-        <button className="button-primary"><TrashIcon /></button>
+        <button className="button-primary" onClick={() => removeItem(task.id)}>
+          <TrashIcon />
+        </button>
       </div>
     </li>
   );
