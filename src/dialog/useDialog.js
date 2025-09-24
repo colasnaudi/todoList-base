@@ -1,11 +1,11 @@
 import { useState } from "react";
 
 const possibleStates = Object.freeze({
-    EN_COURS :{
-        icon: "in_progress"
+    EN_COURS: {
+        isDone: false,
     },
     TERMINE: {
-        icon: "done"
+        isDone: true,
     }
 });
 

@@ -12,7 +12,7 @@ export const TaskContainer = () => {
     <main>
       <Header />
       <TaskInput addItem={addItem} />
-      <TaskList nbTasks={numberOfTasks} />
+      <TaskList nbTasks={numberOfTasks} listItem={listItem} />
       <Footer />
     </main>
   );
