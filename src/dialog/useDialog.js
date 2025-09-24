@@ -13,15 +13,17 @@ export function useDialog() {
     const [listItem, setListItem] = useState([]);
     const [numberOfTasks, setNumberOfTasks] = useState(0);
     const [numberOfDoneTasks, setNumberOfDoneTasks] = useState(0);
+    const [nextId, setNextId] = useState(1);
 
     // Fonction pour ajouter une tâche
 
     function addItem(name) {
         const newItem = {
-            id: listItem.length + 1,
+            id: nextId,
             name: name,
             state: possibleStates.EN_COURS
         };
+        setNextId(nextId + 1);
         setListItem([...listItem, newItem]);
         setNumberOfTasks(numberOfTasks + 1);
     }
