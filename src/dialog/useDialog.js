@@ -11,6 +11,7 @@ const possibleStates = Object.freeze({
 
 export function useDialog() {
     const [listItem, setListItem] = useState([]);
+    const [numberOfTasks, setNumberOfTasks] = useState(0);
 
     // Fonction pour ajouter une tâche
 
@@ -21,6 +22,7 @@ export function useDialog() {
             state: possibleStates.EN_COURS
         };
         setListItem([...listItem, newItem]);
+        setNumberOfTasks(numberOfTasks + 1);
     }
 
     // Fonction pour supprimer une tâche
@@ -29,6 +31,7 @@ export function useDialog() {
     // Fonction pour changer l'état d'une tâche
     return {
         listItem,
-        addItem
+        addItem,
+        numberOfTasks
     };
 };

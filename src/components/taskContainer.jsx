@@ -6,13 +6,13 @@ import {useDialog} from "../dialog/useDialog.js";
 
 // Ce composant est utilisé pour afficher l'intégralité de la fonctionalité de Tache.
 export const TaskContainer = () => {
-    const { listItem, addItem } = useDialog();
-    console.log(listItem);
+    const { listItem, addItem, numberOfTasks } = useDialog();
+
   return (
     <main>
       <Header />
       <TaskInput addItem={addItem} />
-      <TaskList />
+      <TaskList nbTasks={numberOfTasks} />
       <Footer />
     </main>
   );
